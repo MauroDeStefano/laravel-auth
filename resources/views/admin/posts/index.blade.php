@@ -21,8 +21,13 @@
       <td>{{$post->title}}</td>
       <td>{{$post->content}}</td>
       <td class="row">
-        <a class="btn btn-success w-100 mb-2" href="">EDIT</a>
-        <a class="btn btn-danger w-100" href="">DELETE</a>
+        <a class="btn btn-primary w-100 mb-2" href="{{route('admin.posts.show', $post)}}">SHOW</a>
+        <a class="btn btn-success w-100 mb-2" href="{{route('admin.posts.edit', $post)}}">EDIT</a>
+        <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn w-100 btn-danger">DELETE</button></td>
+        </form>
       </td>
     </tr> 
     @endforeach
