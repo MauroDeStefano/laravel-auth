@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use faker\generator as Faker;
+use Faker\Generator as Faker;
 use App\Post;
 use illuminate\support\Str;
 
